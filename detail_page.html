@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gagal Ginjal: Penyebab, Gejala, dan Tindakan Pencegahan - MyBlog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
+            padding: 0.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .logo-highlight {
+            color: #7fda40;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            color: #a8e6cf;
+            background: rgba(168, 230, 207, 0.15);
+        }
+
+        .search-icon,
+        .theme-toggle {
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .search-icon:hover,
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            max-width: 900px;
+            margin: 30px auto 0;
+            padding: 0 20px;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        .breadcrumb a {
+            color: #27ae60;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Article Container */
+        .article-container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Article Header */
+        .article-header {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .category-badge {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #ecf0f1;
+            flex-wrap: wrap;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #27ae60 0%, #16a085 100%);
+        }
+
+        .author-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .author-name {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .author-title {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        /* Featured Image */
+        .featured-image {
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(135deg, #27ae60 0%, #16a085 100%);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        /* Article Content */
+        .article-content {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .article-content h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border-left: 5px solid #27ae60;
+        }
+
+        .article-content h3 {
+            font-size: 1.4rem;
+            color: #34495e;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .article-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 20px 0 20px 30px;
+        }
+
+        .article-content li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        .article-content strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .highlight-box {
+            background: #e8f8f5;
+            border-left: 4px solid #27ae60;
+            padding: 20px 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        /* Tags */
+        .article-tags {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .tags-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .tags-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .tag:hover {
+            background: #27ae60;
+            color: white;
+        }
+
+        /* Share Buttons */
+        .share-section {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .share-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            padding: 12px 25px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.3s;
+            border: none;
+            font-size: 0.95rem;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .share-btn.facebook {
+            background: #3b5998;
+        }
+
+        .share-btn.twitter {
+            background: #1da1f2;
+        }
+
+        .share-btn.whatsapp {
+            background: #25d366;
+        }
+
+        .share-btn.linkedin {
+            background: #0077b5;
+        }
+
+        /* Related Articles */
+        .related-articles {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .related-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 5px solid #27ae60;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .related-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .related-thumbnail {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(135deg, #27ae60 0%, #16a085 100%);
+        }
+
+        .related-content {
+            padding: 20px;
+        }
+
+        .related-category {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .related-card-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #2c3e50;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .related-date {
+            font-size: 0.8rem;
+            color: #95a5a6;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
+            padding: 40px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        footer .logo {
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 1.8rem;
+            }
+
+            .article-header {
+                padding: 25px;
+            }
+
+            .article-content {
+                padding: 25px;
+            }
+
+            .article-content h2 {
+                font-size: 1.4rem;
+            }
+
+            .article-content p,
+            .article-content li {
+                font-size: 1rem;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .meta-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <span class="logo-highlight">My</span><span>Blog</span><span>.com</span>
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="#kesehatan">Kesehatan</a>
+                <a href="#teknologi">Teknologi</a>
+                <a href="#lifestyle">Lifestyle</a>
+                <a href="#tips">Tips & Trik</a>
+                <span class="search-icon">🔍</span>
+                <span class="theme-toggle">☀️</span>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="index.html">Home</a> / <a href="#kesehatan">Kesehatan</a> / Gagal Ginjal: Penyebab, Gejala, dan
+        Tindakan Pencegahan
+    </div>
+
+    <!-- Article Container -->
+    <div class="article-container">
+        <!-- Article Header -->
+        <div class="article-header">
+            <span class="category-badge">KESEHATAN</span>
+            <h1 class="article-title">Gagal Ginjal: Penyebab, Gejala, dan Tindakan Pencegahan</h1>
+            <div class="article-meta">
+                <div class="author-info">
+                    <div class="author-avatar"></div>
+                    <div class="author-details">
+                        <div class="author-name">Dr. Sarah Wijaya</div>
+                        <div class="author-title">Spesialis Nefrologi</div>
+                    </div>
+                </div>
+                <div class="meta-info">
+                    <span>📅 22 November 2023</span>
+                    <span>•</span>
+                    <span>⏱️ 8 menit baca</span>
+                    <span>•</span>
+                    <span>👁️ 15.2k views</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Image -->
+        <div class="featured-image">
+            <span>Gagal Ginjal - Ilustrasi</span>
+        </div>
+
+        <!-- Article Content -->
+        <div class="article-content">
+            <p>
+                Gagal ginjal adalah kondisi medis serius yang terjadi ketika ginjal kehilangan kemampuannya untuk
+                menyaring limbah dan cairan berlebih dari darah. Kondisi ini dapat berkembang secara perlahan (kronis)
+                atau terjadi secara tiba-tiba (akut). Pemahaman yang baik tentang gagal ginjal sangat penting untuk
+                pencegahan dan penanganan yang tepat.
+            </p>
+
+            <h2>Apa Itu Gagal Ginjal?</h2>
+            <p>
+                Ginjal adalah organ vital yang bertugas menyaring darah, membuang limbah melalui urin, dan menjaga
+                keseimbangan elektrolit dalam tubuh. Ketika ginjal tidak berfungsi dengan baik, limbah dan cairan dapat
+                menumpuk dalam tubuh, menyebabkan berbagai masalah kesehatan yang serius.
+            </p>
+
+            <div class="highlight-box">
+                <p><strong>Tahukah Anda?</strong> Setiap hari, ginjal menyaring sekitar 150 liter darah dan
+                    menghasilkan 1-2 liter urin. Ketika fungsi ginjal menurun hingga di bawah 15%, penderita mungkin
+                    memerlukan dialisis atau transplantasi ginjal.</p>
+            </div>
+
+            <h2>Jenis-jenis Gagal Ginjal</h2>
+
+            <h3>1. Gagal Ginjal Akut (Acute Kidney Injury)</h3>
+            <p>
+                Gagal ginjal akut terjadi secara tiba-tiba, biasanya dalam beberapa jam atau hari. Kondisi ini sering
+                kali dapat disembuhkan jika segera ditangani. Penyebab utamanya meliputi:
+            </p>
+            <ul>
+                <li>Dehidrasi berat atau kehilangan darah yang signifikan</li>
+                <li>Infeksi parah yang menyebabkan syok</li>
+                <li>Obstruksi saluran kemih</li>
+                <li>Reaksi terhadap obat-obatan tertentu</li>
+                <li>Komplikasi dari prosedur medis</li>
+            </ul>
+
+            <h3>2. Gagal Ginjal Kronis (Chronic Kidney Disease)</h3>
+            <p>
+                Gagal ginjal kronis berkembang secara bertahap selama berbulan-bulan atau bahkan bertahun-tahun. Kondisi
+                ini umumnya tidak dapat disembuhkan, tetapi perkembangannya dapat diperlambat dengan pengobatan yang
+                tepat.
+            </p>
+
+            <h2>Penyebab Utama Gagal Ginjal</h2>
+            <p>
+                Beberapa kondisi kesehatan dapat meningkatkan risiko gagal ginjal:
+            </p>
+
+            <ol>
+                <li><strong>Diabetes Mellitus:</strong> Penyebab utama gagal ginjal kronis. Kadar gula darah yang tinggi
+                    dapat merusak pembuluh darah kecil di ginjal.</li>
+                <li><strong>Hipertensi:</strong> Tekanan darah tinggi dapat merusak pembuluh darah ginjal, mengurangi
+                    kemampuannya untuk berfungsi dengan baik.</li>
+                <li><strong>Penyakit Ginjal Polikistik:</strong> Kondisi genetik yang menyebabkan kista berkembang di
+                    ginjal.</li>
+                <li><strong>Glomerulonefritis:</strong> Peradangan pada unit penyaring ginjal (glomerulus).</li>
+                <li><strong>Infeksi Saluran Kemih Berulang:</strong> Infeksi yang tidak diobati dapat menyebar ke ginjal
+                    dan menyebabkan kerusakan permanen.</li>
+            </ol>
+
+            <h2>Gejala Gagal Ginjal</h2>
+            <p>
+                Gejala gagal ginjal dapat bervariasi tergantung pada tingkat keparahan kondisi. Pada tahap awal, gejala
+                mungkin tidak terlihat jelas. Berikut adalah tanda-tanda yang perlu diwaspadai:
+            </p>
+
+            <ul>
+                <li><strong>Kelelahan dan kelemahan:</strong> Akibat penumpukan racun dan anemia</li>
+                <li><strong>Pembengkakan:</strong> Terutama di kaki, pergelangan kaki, dan wajah</li>
+                <li><strong>Perubahan frekuensi buang air kecil:</strong> Terlalu sering atau terlalu jarang</li>
+                <li><strong>Urin berbusa atau berdarah:</strong> Menandakan protein atau darah dalam urin</li>
+                <li><strong>Sesak napas:</strong> Akibat penumpukan cairan di paru-paru</li>
+                <li><strong>Mual dan muntah:</strong> Karena penumpukan limbah dalam darah</li>
+                <li><strong>Gatal-gatal persisten:</strong> Akibat penumpukan fosfat dalam darah</li>
+                <li><strong>Nyeri dada:</strong> Jika cairan menumpuk di sekitar jantung</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>Penting!</strong> Jika Anda mengalami gejala-gejala di atas, segera konsultasikan dengan
+                    dokter. Deteksi dini dapat membantu memperlambat perkembangan penyakit dan mencegah komplikasi
+                    serius.</p>
+            </div>
+
+            <h2>Diagnosis Gagal Ginjal</h2>
+            <p>
+                Dokter akan melakukan beberapa pemeriksaan untuk mendiagnosis gagal ginjal:
+            </p>
+            <ul>
+                <li><strong>Tes darah:</strong> Mengukur kadar kreatinin dan urea untuk menilai fungsi ginjal</li>
+                <li><strong>Tes urin:</strong> Memeriksa protein, darah, atau sel abnormal dalam urin</li>
+                <li><strong>USG ginjal:</strong> Melihat ukuran dan struktur ginjal</li>
+                <li><strong>CT Scan atau MRI:</strong> Memberikan gambaran detail tentang ginjal</li>
+                <li><strong>Biopsi ginjal:</strong> Mengambil sampel jaringan ginjal untuk pemeriksaan lebih lanjut</li>
+            </ul>
+
+            <h2>Pencegahan Gagal Ginjal</h2>
+            <p>
+                Beberapa langkah yang dapat dilakukan untuk menjaga kesehatan ginjal:
+            </p>
+
+            <h3>1. Kontrol Diabetes dan Tekanan Darah</h3>
+            <p>
+                Jaga kadar gula darah dan tekanan darah dalam batas normal melalui pola makan sehat, olahraga teratur,
+                dan obat-obatan sesuai resep dokter.
+            </p>
+
+            <h3>2. Pola Makan Sehat</h3>
+            <ul>
+                <li>Kurangi konsumsi garam dan makanan olahan</li>
+                <li>Batasi asupan protein hewani berlebihan</li>
+                <li>Perbanyak konsumsi buah dan sayuran segar</li>
+                <li>Hindari makanan tinggi fosfor jika sudah memiliki masalah ginjal</li>
+            </ul>
+
+            <h3>3. Minum Air Putih yang Cukup</h3>
+            <p>
+                Konsumsi air putih 8-10 gelas per hari membantu ginjal membuang racun dari tubuh. Namun, konsultasikan
+                dengan dokter jika Anda memiliki kondisi yang membatasi asupan cairan.
+            </p>
+
+            <h3>4. Hindari Obat-obatan yang Berbahaya</h3>
+            <p>
+                Penggunaan obat antiinflamasi nonsteroid (NSAID) seperti ibuprofen dalam jangka panjang dapat merusak
+                ginjal. Selalu konsultasikan dengan dokter sebelum mengonsumsi obat apapun secara rutin.
+            </p>
+
+            <h3>5. Berhenti Merokok</h3>
+            <p>
+                Merokok dapat memperlambat aliran darah ke ginjal, mengurangi kemampuannya untuk berfungsi dengan baik.
+            </p>
+
+            <h3>6. Olahraga Teratur</h3>
+            <p>
+                Aktivitas fisik membantu mengontrol berat badan, tekanan darah, dan kadar gula darah, yang semuanya
+                penting untuk kesehatan ginjal.
+            </p>
+
+            <h3>7. Pemeriksaan Kesehatan Rutin</h3>
+            <p>
+                Lakukan pemeriksaan fungsi ginjal secara berkala, terutama jika Anda memiliki faktor risiko seperti
+                diabetes, hipertensi, atau riwayat keluarga dengan penyakit ginjal.
+            </p>
+
+            <h2>Pengobatan Gagal Ginjal</h2>
+            <p>
+                Pengobatan gagal ginjal tergantung pada penyebab dan tingkat keparahannya:
+            </p>
+
+            <h3>Untuk Gagal Ginjal Akut:</h3>
+            <ul>
+                <li>Mengatasi penyebab yang mendasari (misalnya, mengobati infeksi atau menghilangkan obstruksi)</li>
+                <li>Dialisis sementara jika diperlukan</li>
+                <li>Pengaturan keseimbangan cairan dan elektrolit</li>
+            </ul>
+
+            <h3>Untuk Gagal Ginjal Kronis:</h3>
+            <ul>
+                <li><strong>Pengobatan penyebab:</strong> Kontrol diabetes dan hipertensi</li>
+                <li><strong>Obat-obatan:</strong> Untuk mengontrol komplikasi seperti anemia, tekanan darah tinggi, dan
+                    kadar kolesterol</li>
+                <li><strong>Diet khusus:</strong> Rendah protein, natrium, kalium, dan fosfor</li>
+                <li><strong>Dialisis:</strong> Hemodialisis atau peritoneal dialisis untuk menggantikan fungsi ginjal
+                </li>
+                <li><strong>Transplantasi ginjal:</strong> Pilihan terbaik untuk gagal ginjal stadium akhir</li>
+            </ul>
+
+            <h2>Kesimpulan</h2>
+            <p>
+                Gagal ginjal adalah kondisi serius yang memerlukan perhatian medis segera. Dengan pemahaman yang baik
+                tentang penyebab, gejala, dan pencegahan, Anda dapat mengambil langkah-langkah proaktif untuk menjaga
+                kesehatan ginjal. Ingatlah bahwa deteksi dini dan penanganan yang tepat dapat membuat perbedaan besar
+                dalam kualitas hidup penderita gagal ginjal.
+            </p>
+            <p>
+                Jika Anda memiliki faktor risiko atau mengalami gejala yang mencurigakan, jangan ragu untuk
+                berkonsultasi dengan dokter. Kesehatan ginjal adalah investasi jangka panjang untuk kesejahteraan Anda.
+            </p>
+        </div>
+
+        <!-- Tags -->
+        <div class="article-tags">
+            <div class="tags-title">Tags:</div>
+            <div class="tags-list">
+                <span class="tag">#GagalGinjal</span>
+                <span class="tag">#Kesehatan</span>
+                <span class="tag">#KesehatanGinjal</span>
+                <span class="tag">#Pencegahan</span>
+                <span class="tag">#TipsKesehatan</span>
+                <span class="tag">#PenyakitKronis</span>
+            </div>
+        </div>
+
+        <!-- Share Section -->
+        <div class="share-section">
+            <div class="share-title">Bagikan Artikel:</div>
+            <div class="share-buttons">
+                <button class="share-btn facebook" onclick="shareArticle('facebook')">📘 Facebook</button>
+                <button class="share-btn twitter" onclick="shareArticle('twitter')">🐦 Twitter</button>
+                <button class="share-btn whatsapp" onclick="shareArticle('whatsapp')">💬 WhatsApp</button>
+                <button class="share-btn linkedin" onclick="shareArticle('linkedin')">💼 LinkedIn</button>
+            </div>
+        </div>
+
+        <!-- Related Articles -->
+        <div class="related-articles">
+            <h2 class="related-title">Artikel Terkait</h2>
+            <div class="related-grid">
+                <div class="related-card" onclick="window.location.href='article-detail.html?id=kesehatan-mental'">
+                    <div class="related-thumbnail"
+                        style="background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);"></div>
+                    <div class="related-content">
+                        <span class="related-category">KESEHATAN</span>
+                        <h3 class="related-card-title">Kesehatan Mental pada Remaja: Panduan untuk Orang Tua</h3>
+                        <div class="related-date">30 November 2023</div>
+                    </div>
+                </div>
+
+                <div class="related-card" onclick="window.location.href='article-detail.html?id=gaya-hidup-sehat'">
+                    <div class="related-thumbnail"
+                        style="background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);"></div>
+                    <div class="related-content">
+                        <span class="related-category">LIFESTYLE</span>
+                        <h3 class="related-card-title">Gaya Hidup Sehat untuk Pekerja Kantoran</h3>
+                        <div class="related-date">27 November 2023</div>
+                    </div>
+                </div>
+
+                <div class="related-card" onclick="window.location.href='article-detail.html?id=menulis-buku'">
+                    <div class="related-thumbnail"
+                        style="background: linear-gradient(135deg, #52c234 0%, #27ae60 100%);"></div>
+                    <div class="related-content">
+                        <span class="related-category">TIPS & TRIK</span>
+                        <h3 class="related-card-title">5 Cara Menulis Buku Non Fiksi untuk Pemula</h3>
+                        <div class="related-date">29 November 2023</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div style="max-width: 1400px; margin: 0 auto;">
+            <div class="logo">
+                <span class="logo-highlight">My</span><span>Blog</span><span>.com</span>
+            </div>
+            <p>Platform berbagi informasi terpercaya untuk Anda</p>
+            <div class="footer-links">
+                <a href="#">Tentang Kami</a>
+                <a href="#">Kontak</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+            </div>
+            <p style="opacity: 0.6; font-size: 0.9rem;">© 2023 MyBlog.com. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.style.background = document.body.style.background === 'rgb(44, 62, 80)' ? '#f5f5f5' : '#2c3e50';
+            document.body.style.color = document.body.style.color === 'rgb(236, 240, 241)' ? '#333' : '#ecf0f1';
+            themeToggle.textContent = themeToggle.textContent === '☀️' ? '🌙' : '☀️';
+        });
+
+        // Share functions
+        function shareArticle(platform) {
+            const url = window.location.href;
+            const title = document.querySelector('.article-title').textContent;
+
+            switch (platform) {
+                case 'facebook':
+                    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+                    break;
+                case 'twitter':
+                    window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`, '_blank');
+                    break;
+                case 'whatsapp':
+                    window.open(`https://wa.me/?text=${encodeURIComponent(title + ' ' + url)}`, '_blank');
+                    break;
+                case 'linkedin':
+                    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank');
+                    break;
+            }
+        }
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (link.getAttribute('href') !== 'index.html') {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
